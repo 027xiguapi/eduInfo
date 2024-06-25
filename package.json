@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "prettier": "^3.3.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "vitepress": "^1.2.3"
+  }
+}
