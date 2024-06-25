@@ -1,28 +1,37 @@
 import { defineConfig } from 'vitepress'
+import { genFeed } from './genFeed.js'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "eduInfo",
-  description: "A VitePress Site",
-  themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
-      { text: '武汉', link: '/wuhan/info-list' }
-    ],
-
-    sidebar: [
+  title: 'The Vue Point',
+  description: 'The official blog for the Vue.js project',
+  cleanUrls: true,
+  head: [
+    ['meta', { name: 'twitter:site', content: '@vuejs' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    [
+      'meta',
       {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
+        name: 'twitter:image',
+        content: 'https://vuejs.org/images/logo.png'
       }
     ],
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ],
+    [
+      'script',
+      {
+        src: 'https://cdn.usefathom.com/script.js',
+        'data-site': 'NYHGSGQV',
+        'data-spa': 'auto',
+        defer: ''
+      }
     ]
-  }
+  ],
+  buildEnd: genFeed
 })

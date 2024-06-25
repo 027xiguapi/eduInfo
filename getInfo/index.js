@@ -48,8 +48,7 @@ async function main() {
   for (let i = 0; i < pageUrlList.length; i++) {
     let url = pageUrlList[i]
     let info = await getPage(url, i)
-    const content = `
----
+    const content = `---
 title: ${info.title}
 link: ${url}
 date: ${info.date}
